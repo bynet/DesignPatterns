@@ -3,6 +3,6 @@
 
 int main( int argc , char* argv[] ) {
 
-  std::cout << "in main" << std::endl;
+  std::cout << "lesson_1" << std::endl;
   
 }

@@ -1,14 +1,15 @@
 cmake_minimum_required(VERSION 3.1.0)
 set(CMAKE_CXX_STANDARD 11)
-set(OUTPUT "QuickSample")
-set(USE_BOOST 0)
+set(PROJECT "QuickSample")
+set(USE_BOOST 1)
 
-project(${OUTPUT})
 
+project(${PROJECT})
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include_directories(${CMAKE_SOURCE_DIR})
 
-add_executable(${OUTPUT} main.cpp)
+add_subdirectory(lesson_1)
+
 
 if(USE_BOOST)
 
@@ -16,11 +17,6 @@ if(USE_BOOST)
   set(Boost_USE_MULTITHREADED      ON)
 
   find_package(Boost REQUIRED COMPONENTS system log)
-  if(Boost_FOUND)
-    include_directories(${Boost_INCLUDE_DIRS})
-    target_link_libraries(${OUTPUT} ${Boost_LIBRARIES})
-  endif()
-
 endif()
 
 
